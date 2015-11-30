@@ -5,10 +5,10 @@ android {
     signingConfigs {
         // TODO: Jenkins
         config {
-//            keyAlias 'keystore'
-//            keyPassword 'keystore'
-//            storeFile file('/Users/Beatmax/my_android_keystore.jks')
-//            storePassword 'keystore'
+            keyAlias 'keystore'
+            keyPassword 'keystore'
+            storeFile file('/Users/Beatmax/my_android_keystore.jks')
+            storePassword 'keystore'
         }
     }
     compileSdkVersion 23
@@ -19,8 +19,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "0.9"
-        // TODO: Jenkins
-        // signingConfig signingConfigs.config
+        signingConfig signingConfigs.config
     }
     buildTypes {
         release {
