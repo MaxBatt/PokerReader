@@ -14,7 +14,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion '23.0.2'
     defaultConfig {
-        applicationId 'beatmax.pokerrader'
+        applicationId 'beatmax.pokerreader'
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
