@@ -3,21 +3,24 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
+        // TODO: Jenkins
         config {
-            keyAlias 'keystore'
-            keyPassword 'keystore'
-            storeFile file('/Users/Beatmax/my_android_keystore.jks')
-            storePassword 'keystore'
+//            keyAlias 'keystore'
+//            keyPassword 'keystore'
+//            storeFile file('/Users/Beatmax/my_android_keystore.jks')
+//            storePassword 'keystore'
         }
     }
     compileSdkVersion 23
     buildToolsVersion '23.0.2'
     defaultConfig {
-        applicationId "beatmax.newestpokerreader"
+        applicationId 'beatmax.pokerrader'
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "0.9"
+        // TODO: Jenkins
+        // signingConfig signingConfigs.config
     }
     buildTypes {
         release {
