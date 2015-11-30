@@ -2,8 +2,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'keystore'
+            keyPassword 'keystore'
+            storeFile file('/Users/Beatmax/my_android_keystore.jks')
+            storePassword 'keystore'
+        }
+    }
     compileSdkVersion 23
-    buildToolsVersion '23.0.1'
+    buildToolsVersion '23.0.2'
     defaultConfig {
         applicationId "beatmax.newestpokerreader"
         minSdkVersion 14
@@ -78,7 +86,7 @@ dependencies {
     compile 'com.github.gabrielemariotti.cards:cardslib-extra-dragdrop:2.1.0'
     //Optional for twowayview support (coming soon)
     //compile 'com.github.gabrielemariotti.cards:cardslib-extra-twoway:2.1.0'
-    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.github.pedrovgs:lynx:1.5'
     compile 'com.pixplicity.easyprefs:library:1.7'
@@ -89,5 +97,4 @@ dependencies {
     compile 'com.akexorcist:RoundCornerProgressBar:2.0.3'
     compile 'cat.ereza:customactivityoncrash:1.4.0'
     compile 'de.madcyph3r:materialDrawer:2.0.0@aar'
-
 }
