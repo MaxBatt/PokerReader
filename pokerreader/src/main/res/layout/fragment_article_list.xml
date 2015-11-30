@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:card="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swype_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <it.gmariotti.cardslib.library.recyclerview.view.CardRecyclerView
+            android:id="@+id/carddemo_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            card:list_card_layout_resourceID="@layout/my_card_thumbnail_layout"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="beatmax.pokerreader.ui.ArticleActivity">
+
+      <item android:id="@+id/article_menu_share"
+          android:title="@string/article_menu_share"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+
+    <item android:id="@+id/article_menu_go_to_site"
+          android:title="@string/article_menu_go_to_site"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+
+    <item android:id="@+id/article_menu_copy_link"
+          android:title="@string/article_menu_copy_link"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+</menu>

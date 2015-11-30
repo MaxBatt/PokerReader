@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="beatmax.pokerreader">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+    <application
+        android:name="beatmax.pokerreader.prefs.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MaterialNavigationDrawerTheme.Light"
+        tools:overrideLibrary="rx.android"
+        tools:replace="android:theme">
+        <activity
+            android:name="beatmax.pokerreader.ui.MainActivity"
+            android:label="@string/app_name"
+            android:configChanges="orientation|screenSize"
+            >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name="beatmax.pokerreader.ui.NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/BelowToolbarTheme" >
+
+        </activity>
+
+        <service android:name="beatmax.pokerreader.BackgroundService"
+            />
+
+        <activity
+            android:name="beatmax.pokerreader.ui.ArticleActivity"
+            android:label="@string/title_activity_article"
+            android:parentActivityName="beatmax.pokerreader.ui.NavigationActivity"
+            android:theme="@style/BelowToolbarTheme" >
+        </activity>
+        <activity
+            android:name="beatmax.pokerreader.prefs.PreferencesActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="beatmax.pokerreader.ui.NavigationActivity"
+            android:theme="@style/BelowToolbarTheme" >
+        </activity>
+        <activity
+            android:name="beatmax.pokerreader.ui.DbDebugActivity"
+            android:label="@string/title_activity_db_debug"
+            android:parentActivityName="beatmax.pokerreader.prefs.PreferencesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="beatmax.pokerreader.prefs.PreferencesActivity" />
+        </activity>
+        <activity
+            android:name="beatmax.pokerreader.ui.TabActivity"
+            android:label="@string/title_activity_tab" >
+        </activity>
+    </application>
+
+</manifest>

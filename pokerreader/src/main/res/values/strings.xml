@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">PokerReader</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sync_dialog_title">Please wait while loading articles</string>
+    <string name="sync_dialog_message">This could take a little while on the first time...</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="notification_background_service">PokerReader is running</string>
+    <string name="menu_item_articles">Articles</string>
+    <string name="title_activity_article">ArticleActivity</string>
+    <string name="prefs_section_app_setting">App Settings</string>
+    <string name="prefs_section_developer_settings">Developer Settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_db_debug">DDebugActivity</string>
+    <string name="pref_title_inspect_database">Inspect Database</string>
+    <string name="pref_key_inspect_database">inspect_database</string>
+    <string name="pref_summary_inspect_database">Show all articles persisted in DB</string>
+    <string name="sites_pokerstrategy">Pokerstrategy.com</string>
+    <string name="sites_pokerfirma">Pokerfirma.com</string>
+    <string name="title_sites">Sites</string>
+    <string name="pref_key_site_pokerstrategy">pokerstrategy.com</string>
+    <string name="pref_key_site_pokerfirma">pokerfirma.com</string>
+    <string name="load_article_dialog_message">Loading article...</string>
+    <string name="menu_subtitle">Main Menu</string>
+    <string name="menu_title">PokerReader</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="prefs_section_sites">Sites</string>
+    <string name="clear_app_data_title">Clear app data</string>
+    <string name="clear_app_data_summary">This will delete all local articles</string>
+    <string name="pref_key_app_cleared">appCleared</string>
+    <string name="pref_article_age">article_age</string>
+    <string name="article_age">Article age</string>
+    <string name="article_age_summary">Show articles from last %s day(s)</string>
+    <string name="pref_key_should_sync">should_sync</string>
+    <string name="pref_shouldReload">age_has_changed</string>
+    <string name="article_menu_add_to_favorites">Add to favorites</string>
+    <string name="article_menu_share">Share</string>
+    <string name="article_menu_like">Like</string>
+    <string name="share_text">Read \"%1$s\" on %2$s</string>
+    <string name="article_menu_copy_link">Copy link to clipboard</string>
+    <string name="pref_key_site_pokerolymp">pokerolymp.com</string>
+    <string name="sites_pokerolymp">Pokerolymp.com</string>
+    <string name="pref_key_site_pokernews">pokernews.com</string>
+    <string name="sites_pokernews">Pokernews.com</string>
+    <string name="toast_link_copied">Link copied!</string>
+    <string name="article_menu_go_to_site">Go to article Website</string>
+    <string name="pref_app_theme">app_theme</string>
+    <string name="app_theme">App Theme</string>
+    <string name="app_theme_summary">Set a color theme for PokerReader</string>
+    <string name="one_day">1 day</string>
+    <string name="three_days">3 days</string>
+    <string name="five_days">5 days</string>
+    <string name="seven_days">7 days</string>
+    <string name="ten_days">10 days</string>
+    <string name="fourteen_days">14 days</string>
+    <string name="pref_key_app_theme">app_theme</string>
+
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="red">Red</string>
+    <string name="purple">Purple</string>
+    <string name="orange">Orange</string>
+
+    <string name="blue_value">#1788CF</string>
+    <string name="green_value">#096B05</string>
+    <string name="red_value">#9E0B0B</string>
+    <string name="purple_value">#9400D3</string>
+    <string name="orange_value">#DE9828</string>
+
+    <string name="active_sites">active_sites</string>
+    <string name="pref_key_active_sites">active_sites</string>
+    <string name="at_least_one_site">Please choose at least one site!</string>
+</resources>

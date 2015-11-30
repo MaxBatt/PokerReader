@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="article_age_keys">
+        <item>@string/one_day</item>
+        <item>@string/three_days</item>
+        <item>@string/five_days</item>
+        <item>@string/seven_days</item>
+        <item>@string/ten_days</item>
+        <item>@string/fourteen_days</item>
+    </string-array>
+
+
+    <string-array name="article_age_values">
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>7</item>
+        <item>10</item>
+        <item>14</item>
+    </string-array>
+
+    <string-array name="app_theme_keys">
+        <item>@string/blue</item>
+        <item>@string/green</item>
+        <item>@string/red</item>
+        <item>@string/purple</item>
+        <item>@string/orange</item>
+    </string-array>
+
+    <string-array name="app_theme_values">
+        <item>@string/blue_value</item>
+        <item>@string/green_value</item>
+        <item>@string/red_value</item>
+        <item>@string/purple_value</item>
+        <item>@string/orange_value</item>
+    </string-array>
+
+    <string-array name="active_sites_keys">
+        <item>@string/sites_pokerstrategy</item>
+        <item>@string/sites_pokerfirma</item>
+        <item>@string/sites_pokerolymp</item>
+        <item>@string/sites_pokernews</item>
+    </string-array>
+
+    <string-array name="active_sites_values">
+        <item>@string/pref_key_site_pokerstrategy</item>
+        <item>@string/pref_key_site_pokerfirma</item>
+        <item>@string/pref_key_site_pokerolymp</item>
+        <item>@string/pref_key_site_pokernews</item>
+    </string-array>
+
+
+</resources>
