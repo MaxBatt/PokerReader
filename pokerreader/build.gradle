@@ -17,8 +17,11 @@ android {
         applicationId 'beatmax.pokerreader'
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 1
-        versionName "0.9"
+        // Set Jenkins build number as version code. Get the value from Jenkins environment variable
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 0
+        // Set the version name: major.minor.build_number
+        // Get the values from Jenkins environment variables. Jenkins gets them from version.ini
+        versionName System.getenv("APP_VERSION") + "." + System.getenv("BUILD_NUMBER") + " [" + System.getenv("BUILD_TYPE") + "]" ?: '1.0'
         signingConfig signingConfigs.config
     }
     buildTypes {
