@@ -7,7 +7,7 @@ android {
         config {
             keyAlias 'keystore'
             keyPassword 'keystore'
-            storeFile file('/Users/Beatmax/my_android_keystore.jks')
+            storeFile file('/opt/my_android_keystore.jks')
             storePassword 'keystore'
         }
     }
