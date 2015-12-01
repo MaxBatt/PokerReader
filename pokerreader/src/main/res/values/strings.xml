@@ -1,16 +1,10 @@
 <resources>
     <string name="app_name">PokerReader</string>
 
-
+    <!-- Dialogs, Notifications...-->
     <string name="sync_dialog_title">Loading articles...</string>
     <string name="sync_dialog_message">This could take a little while, depending on your internet connection and how many articles are loaded</string>
     <string name="notification_background_service">PokerReader is syncing articles...</string>
-
-
-    <string name="title_activity_settings">Settings</string>
-    <string name="action_settings">Settings</string>
-    <string name="prefs_section_app_setting">App Settings</string>
-    <string name="prefs_section_developer_settings">Developer Settings</string>
 
     <!-- Sites -->
     <string name="title_sites">Sites</string>
@@ -28,6 +22,10 @@
     <string name="article_menu_go_to_site">Go to article Website</string>
 
     <!-- Prefs -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="prefs_section_app_setting">App Settings</string>
+    <string name="prefs_section_developer_settings">Developer Settings</string>
     <string name="clear_app_data_title">Clear app data</string>
     <string name="clear_app_data_summary">This will delete all local articles</string>
     <string name="article_age">Article age</string>
