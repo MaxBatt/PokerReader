@@ -21,7 +21,13 @@ android {
         versionCode System.getenv("BUILD_NUMBER") as Integer ?: 0
         // Set the version name: major.minor.build_number
         // Get the values from Jenkins environment variables. Jenkins gets them from version.ini
-        versionName System.getenv("APP_VERSION") + "." + System.getenv("BUILD_NUMBER") + " [" + System.getenv("BUILD_TYPE") + "]" ?: '1.0'
+        if(System.getenv("BUILD_TYPE").equals("release")){
+            versionName System.getenv("APP_VERSION") + "." + System.getenv("BUILD_NUMBER") ?: '1.0'
+        }
+        else{
+            versionName System.getenv("APP_VERSION") + "." + System.getenv("BUILD_NUMBER") + " [" + System.getenv("BUILD_TYPE") + "]" ?: '1.0'
+        }
+
         signingConfig signingConfigs.config
     }
     buildTypes {
