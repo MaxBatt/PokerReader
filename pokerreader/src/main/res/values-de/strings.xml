@@ -53,4 +53,31 @@
 
 
 
+
+    <!-- Pref Keys - Do not translate-->
+    <string name="pref_key_site_pokerstrategy">pokerstrategy.com</string>
+    <string name="pref_key_site_pokerfirma">pokerfirma.com</string>
+    <string name="pref_key_site_pokerolymp">pokerolymp.com</string>
+    <string name="pref_key_site_pokernews">pokernews.com</string>
+
+    <string name="pref_key_app_cleared">appCleared</string>
+    <string name="pref_article_age">article_age</string>
+    <string name="pref_key_should_sync">should_sync</string>
+    <string name="pref_shouldReload">age_has_changed</string>
+
+    <string name="pref_key_app_theme">app_theme</string>
+    <string name="pref_app_theme">app_theme</string>
+
+    <string name="blue_value">#1788CF</string>
+    <string name="green_value">#096B05</string>
+    <string name="red_value">#9E0B0B</string>
+    <string name="purple_value">#9400D3</string>
+    <string name="orange_value">#DE9828</string>
+
+    <string name="active_sites">active_sites</string>
+    <string name="pref_key_active_sites">active_sites</string>
+    <string name="pref_key_app_info">app_info</string>
+
+
+
 </resources>
