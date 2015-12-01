@@ -56,26 +56,26 @@
 
 
     <!-- Pref Keys - Do not translate-->
-    <string name="pref_key_site_pokerstrategy">pokerstrategy.com</string>
-    <string name="pref_key_site_pokerfirma">pokerfirma.com</string>
-    <string name="pref_key_site_pokerolymp">pokerolymp.com</string>
-    <string name="pref_key_site_pokernews">pokernews.com</string>
+    <string name="pref_key_site_pokerstrategy" translatable="false">pokerstrategy.com</string>
+    <string name="pref_key_site_pokerfirma" translatable="false">pokerfirma.com</string>
+    <string name="pref_key_site_pokerolymp" translatable="false">pokerolymp.com</string>
+    <string name="pref_key_site_pokernews" translatable="false">pokernews.com</string>
 
-    <string name="pref_key_app_cleared">appCleared</string>
-    <string name="pref_article_age">article_age</string>
-    <string name="pref_key_should_sync">should_sync</string>
-    <string name="pref_shouldReload">age_has_changed</string>
+    <string name="pref_key_app_cleared" translatable="false">appCleared</string>
+    <string name="pref_article_age" translatable="false">article_age</string>
+    <string name="pref_key_should_sync" translatable="false">should_sync</string>
+    <string name="pref_shouldReload" translatable="false">age_has_changed</string>
 
-    <string name="pref_key_app_theme">app_theme</string>
-    <string name="pref_app_theme">app_theme</string>
+    <string name="pref_key_app_theme" translatable="false">app_theme</string>
+    <string name="pref_app_theme" translatable="false">app_theme</string>
 
-    <string name="blue_value">#1788CF</string>
-    <string name="green_value">#096B05</string>
-    <string name="red_value">#9E0B0B</string>
-    <string name="purple_value">#9400D3</string>
-    <string name="orange_value">#DE9828</string>
+    <string name="blue_value" translatable="false">#1788CF</string>
+    <string name="green_value" translatable="false">#096B05</string>
+    <string name="red_value" translatable="false">#9E0B0B</string>
+    <string name="purple_value" translatable="false">#9400D3</string>
+    <string name="orange_value" translatable="false">#DE9828</string>
 
-    <string name="active_sites">active_sites</string>
-    <string name="pref_key_active_sites">active_sites</string>
-    <string name="pref_key_app_info">app_info</string>
+    <string name="active_sites" translatable="false">active_sites</string>
+    <string name="pref_key_active_sites" translatable="false">active_sites</string>
+    <string name="pref_key_app_info" translatable="false">app_info</string>
 </resources>
