@@ -15,7 +15,6 @@
 
     <!-- Menus -->
     <string name="article_menu_share">Share</string>
-    <string name="article_menu_like">Like</string>
     <string name="share_text">Read \"%1$s\" on %2$s</string>
     <string name="article_menu_copy_link">Copy link to clipboard</string>
     <string name="toast_link_copied">Link copied!</string>
