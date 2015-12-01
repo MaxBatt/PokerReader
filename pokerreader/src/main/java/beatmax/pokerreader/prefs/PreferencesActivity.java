@@ -14,6 +14,7 @@ import com.orhanobut.bee.Bee;
 import java.io.File;
 import java.util.Set;
 
+import beatmax.pokerreader.BuildConfig;
 import beatmax.pokerreader.R;
 import beatmax.pokerreader.debug.MainBeeConfig;
 import beatmax.pokerreader.helper.Tools;
@@ -77,7 +78,14 @@ public class PreferencesActivity extends AppCompatActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
+            // Standard Prefs
             addPreferencesFromResource(R.xml.prefs);
+
+            // Debug Prefs
+            if (BuildConfig.DEBUG) {
+                addPreferencesFromResource(R.xml.debug_prefs);
+            }
 
             mPrefManager = new PrefManager(getActivity());
 
