@@ -28,12 +28,7 @@
             </intent-filter>
 
         </activity>
-        <activity
-            android:name="beatmax.pokerreader.ui.NavigationActivity"
-            android:label="@string/title_activity_navigation"
-            android:theme="@style/BelowToolbarTheme" >
 
-        </activity>
 
         <service android:name="beatmax.pokerreader.BackgroundService"
             />
@@ -41,13 +36,13 @@
         <activity
             android:name="beatmax.pokerreader.ui.ArticleActivity"
             android:label="@string/title_activity_article"
-            android:parentActivityName="beatmax.pokerreader.ui.NavigationActivity"
+            android:parentActivityName="beatmax.pokerreader.ui.MainActivity"
             android:theme="@style/BelowToolbarTheme" >
         </activity>
         <activity
             android:name="beatmax.pokerreader.prefs.PreferencesActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="beatmax.pokerreader.ui.NavigationActivity"
+            android:parentActivityName="beatmax.pokerreader.ui.MainActivity"
             android:theme="@style/BelowToolbarTheme" >
         </activity>
         <activity

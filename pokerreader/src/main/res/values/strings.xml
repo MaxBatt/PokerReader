@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">PokerReader</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="sync_dialog_title">Please wait while loading articles</string>
-    <string name="sync_dialog_message">This could take a little while on the first time...</string>
-    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="sync_dialog_title">Loading articles...</string>
+    <string name="sync_dialog_message">This could take a little while, depending on your internet connection and how many articles are loaded</string>
     <string name="notification_background_service">PokerReader is running</string>
     <string name="menu_item_articles">Articles</string>
     <string name="title_activity_article">ArticleActivity</string>
@@ -73,5 +71,5 @@
     <string name="at_least_one_site">Please choose at least one site!</string>
     <string name="prefs_section_app_info">App Info</string>
     <string name="pref_key_app_info">app_info</string>
-    <string name="app_summary">v%s\n(c) 2015 Max Batt</string>
+    <string name="app_summary">%s\n(c) 2015 Max Batt</string>
 </resources>

@@ -8,7 +8,7 @@ import android.support.v4.app.NotificationCompat;
 
 import beatmax.pokerreader.models.RealmArticle;
 import beatmax.pokerreader.networking.ArticleSyncronizer;
-import beatmax.pokerreader.ui.NavigationActivity;
+import beatmax.pokerreader.ui.MainActivity;
 
 /**
  * Created by Max Batt on 02.09.2015.
@@ -61,7 +61,7 @@ public class BackgroundService extends Service
 
 
             // pending intent to return to the activity when the foreground notification is clicked
-            Intent activityIntent = new Intent(BackgroundService.this, NavigationActivity.class);
+            Intent activityIntent = new Intent(BackgroundService.this, MainActivity.class);
             activityIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             PendingIntent pendingIntent = PendingIntent.getActivity(BackgroundService.this, 1, activityIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
