@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">PokerReader</string>
+
+    <!-- Dialogs, Notifications...-->
+    <string name="sync_dialog_title">Lade Artikel...</string>
+    <string name="sync_dialog_message">Abhängig von Verbindung und Anzahl der geladenen Artikel musst du dich ein wenig gedulden.</string>
+    <string name="notification_background_service">PokerReader synchronisiert Artikel...</string>
+
+    <!-- Sites -->
+    <string name="title_sites">Abonnierte Seiten</string>
+    <string name="sites_pokerstrategy">Pokerstrategy.com</string>
+    <string name="sites_pokerfirma">Pokerfirma.com</string>
+    <string name="sites_pokerolymp">Pokerolymp.com</string>
+    <string name="sites_pokernews">Pokernews.com</string>
+
+    <!-- Menus -->
+    <string name="article_menu_share">Teilen</string>
+    <string name="share_text">Schau dir \"%1$s\" auf %2$s an</string>
+    <string name="article_menu_copy_link">Link kopieren</string>
+    <string name="toast_link_copied">Link kopiert!</string>
+    <string name="article_menu_go_to_site">Zur Artikel Webseite</string>
+
+    <!-- Prefs -->
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="prefs_section_app_setting">App Einstellungen</string>
+    <string name="prefs_section_developer_settings">Entwickler Einstellungen</string>
+    <string name="clear_app_data_title">Lösche App-Daten</string>
+    <string name="clear_app_data_summary">Dies löscht alle lokal gespeicherten Artikel</string>
+    <string name="article_age">Lokales speichern</string>
+    <string name="article_age_summary">Zeige und speichere Artikel der letzten %s Tag(e)</string>
+    <string name="app_theme">App Theme</string>
+    <string name="app_theme_summary">Wähle ein Farbschema für den PokerReader</string>
+    <string name="active_sites_summary">Wähle die Pokerseiten, die du abonnieren möchtest</string>
+    <string name="pref_active_sites">Abonnierte Seiten</string>
+
+    <string name="one_day">1 Tag</string>
+    <string name="three_days">3 Tage</string>
+    <string name="five_days">5 Tage</string>
+    <string name="seven_days">7 Tage</string>
+    <string name="ten_days">10 Tage</string>
+    <string name="fourteen_days">14 Tage</string>
+
+    <string name="blue">Blau</string>
+    <string name="green">Grün</string>
+    <string name="red">Rot</string>
+    <string name="purple">Lila</string>
+    <string name="orange">Orange</string>
+
+    <string name="at_least_one_site">Bitte Wähle mindestens eine Seite aus!</string>
+    <string name="prefs_section_app_info">App Info</string>
+    <string name="app_summary">%s\n(c) 2015 Max Batt</string>
+
+
+
+</resources>

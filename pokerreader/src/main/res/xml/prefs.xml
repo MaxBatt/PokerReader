@@ -13,10 +13,10 @@
             />
 
         <MultiSelectListPreference
-            android:dialogTitle="@string/active_sites"
+            android:dialogTitle="@string/pref_active_sites"
             android:key="@string/pref_key_active_sites"
-            android:summary="Choose sites you want to load articles from"
-            android:title="Active sites"
+            android:summary="@string/active_sites_summary"
+            android:title="@string/pref_active_sites"
             android:entries="@array/active_sites_keys"
             android:entryValues="@array/active_sites_values"
             android:defaultValue="@array/active_sites_values"
@@ -30,8 +30,6 @@
             android:entryValues="@array/app_theme_values"
             android:defaultValue="@string/blue_value"
             />
-
-
 
     </PreferenceCategory>
 

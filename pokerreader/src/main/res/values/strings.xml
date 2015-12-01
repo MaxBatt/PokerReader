@@ -32,6 +32,10 @@
     <string name="article_age_summary">Show articles from last %s day(s)</string>
     <string name="app_theme">App Theme</string>
     <string name="app_theme_summary">Set a color theme for PokerReader</string>
+    <string name="active_sites_summary">Choose sites you want to load articles from</string>
+    <string name="pref_active_sites">Active sites</string>
+
+
 
     <string name="one_day">1 day</string>
     <string name="three_days">3 days</string>
@@ -39,7 +43,6 @@
     <string name="seven_days">7 days</string>
     <string name="ten_days">10 days</string>
     <string name="fourteen_days">14 days</string>
-    <string name="pref_key_app_theme">app_theme</string>
 
     <string name="blue">Blue</string>
     <string name="green">Green</string>
@@ -63,6 +66,7 @@
     <string name="pref_key_should_sync">should_sync</string>
     <string name="pref_shouldReload">age_has_changed</string>
 
+    <string name="pref_key_app_theme">app_theme</string>
     <string name="pref_app_theme">app_theme</string>
 
     <string name="blue_value">#1788CF</string>
