@@ -134,6 +134,7 @@ public class PreferencesActivity extends AppCompatActivity {
                 }
             });
 
+            // Developer Settings
             if (BuildConfig.DEBUG){
                 Preference clearButton = findPreference("btn_clear_app_data");
 
@@ -154,6 +155,9 @@ public class PreferencesActivity extends AppCompatActivity {
                     }
                 });
             }
+
+            // Set Appinfo - Version and Copyright
+            findPreference(getString(R.string.pref_key_app_info)).setSummary(getString(R.string.app_summary, BuildConfig.VERSION_NAME.toString()));
         }
 
         private void clearApplicationData() {
