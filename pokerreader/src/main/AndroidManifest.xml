@@ -35,7 +35,7 @@
 
         <activity
             android:name="beatmax.pokerreader.ui.ArticleActivity"
-            android:label="@string/title_activity_article"
+            android:label=""
             android:parentActivityName="beatmax.pokerreader.ui.MainActivity"
             android:theme="@style/BelowToolbarTheme" >
         </activity>
@@ -45,17 +45,10 @@
             android:parentActivityName="beatmax.pokerreader.ui.MainActivity"
             android:theme="@style/BelowToolbarTheme" >
         </activity>
-        <activity
-            android:name="beatmax.pokerreader.ui.DbDebugActivity"
-            android:label="@string/title_activity_db_debug"
-            android:parentActivityName="beatmax.pokerreader.prefs.PreferencesActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="beatmax.pokerreader.prefs.PreferencesActivity" />
-        </activity>
+
         <activity
             android:name="beatmax.pokerreader.ui.TabActivity"
-            android:label="@string/title_activity_tab" >
+            android:label="" >
         </activity>
     </application>
 
