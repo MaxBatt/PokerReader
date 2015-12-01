@@ -51,8 +51,10 @@ public class PreferencesActivity extends AppCompatActivity {
         mTools.setTheme(mToolbar);
 
 
-        Bee.init(this)
-                .inject(MainBeeConfig.class);
+        if (BuildConfig.DEBUG){
+            Bee.init(this)
+                    .inject(MainBeeConfig.class);
+        }
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
@@ -90,24 +92,7 @@ public class PreferencesActivity extends AppCompatActivity {
             mPrefManager = new PrefManager(getActivity());
 
 
-            Preference clearButton = findPreference("btn_clear_app_data");
 
-                    // TODO DELETE ALL APP DATA
-                    clearButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                        @Override
-                        public boolean onPreferenceClick(Preference preference) {
-
-                            Realm realm = Realm.getInstance(getActivity());
-                            realm.beginTransaction();
-                            realm.clear(RealmArticle.class);
-                            realm.commitTransaction();
-                            realm.close();
-
-                            clearApplicationData();
-
-                            return false;
-                        }
-                    });
 
             // If article age has changed, set a flag preference age_has_changed, so that we can check that flag, when coming back to main activity
             // if the flag has been set, MainActivity will refresh the list
@@ -148,6 +133,27 @@ public class PreferencesActivity extends AppCompatActivity {
                     return true;
                 }
             });
+
+            if (BuildConfig.DEBUG){
+                Preference clearButton = findPreference("btn_clear_app_data");
+
+                // TODO DELETE ALL APP DATA
+                clearButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+
+                        Realm realm = Realm.getInstance(getActivity());
+                        realm.beginTransaction();
+                        realm.clear(RealmArticle.class);
+                        realm.commitTransaction();
+                        realm.close();
+
+                        clearApplicationData();
+
+                        return false;
+                    }
+                });
+            }
         }
 
         private void clearApplicationData() {
