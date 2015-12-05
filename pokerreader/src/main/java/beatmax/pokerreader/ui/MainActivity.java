@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         // Params for the Sync
         RequestParams params = new RequestParams();
         // Get sites to sync from Shared Prefs
-        params.setSytesToSync(mPrefManager.getSitesToSync());
+        params.setSytesToSync(mPrefManager.getActiveSites());
         params.setAge(mPrefManager.getArticleAge());
 
         mSyncronizer.synchronize(params);

@@ -39,18 +39,22 @@
     </string-array>
 
     <string-array name="active_sites_keys">
-        <item>@string/sites_pokerstrategy</item>
+        <item>@string/sites_highstakesdb</item>
+        <item>@string/sites_pokernews</item>
         <item>@string/sites_pokerfirma</item>
         <item>@string/sites_pokerolymp</item>
-        <item>@string/sites_pokernews</item>
+        <item>@string/sites_hochgepokert</item>
+        <item>@string/sites_pokerstrategy</item>
+
     </string-array>
 
     <string-array name="active_sites_values">
-        <item>@string/pref_key_site_pokerstrategy</item>
+        <item>@string/pref_key_site_highstakesdb</item>
+        <item>@string/pref_key_site_pokernews</item>
         <item>@string/pref_key_site_pokerfirma</item>
         <item>@string/pref_key_site_pokerolymp</item>
-        <item>@string/pref_key_site_pokernews</item>
+        <item>@string/pref_key_site_hochgepokert</item>
+        <item>@string/pref_key_site_pokerstrategy</item>
     </string-array>
-
 
 </resources>

@@ -86,17 +86,28 @@ public class PrefManager {
     public ArrayList<SitesE> getSitesToSync(){
         ArrayList<SitesE> activeSites = new ArrayList<SitesE>();
 
-        if(isSynced(SitesE.POKERSTRATEGY))
-            activeSites.add(SitesE.POKERSTRATEGY);
-
-        if(isSynced(SitesE.POKERFIRMA))
-            activeSites.add(SitesE.POKERFIRMA);
-
-        if(isSynced(SitesE.POKEROLYMP))
-            activeSites.add(SitesE.POKEROLYMP);
+        if(isSynced(SitesE.HIGHSTAKESDB))
+            activeSites.add(SitesE.HIGHSTAKESDB);
 
         if(isSynced(SitesE.POKERNEWS))
             activeSites.add(SitesE.POKERNEWS);
+
+        if(isSynced(SitesE.POKERFIRMA)) {
+            activeSites.add(SitesE.POKERFIRMA);
+        }
+
+        if(isSynced(SitesE.POKEROLYMP)) {
+            activeSites.add(SitesE.POKEROLYMP);
+        }
+
+        if(isSynced(SitesE.HOCHGEPOKERT)) {
+            activeSites.add(SitesE.HOCHGEPOKERT);
+        }
+
+        if(isSynced(SitesE.POKERSTRATEGY)) {
+            activeSites.add(SitesE.POKERSTRATEGY);
+        }
+
 
         return activeSites;
 
@@ -149,19 +160,29 @@ public class PrefManager {
 
         ArrayList<SitesE> activeSitesList = new ArrayList<SitesE>();
 
-        if(activeSites.contains(SitesE.POKERSTRATEGY.getValue())){
-            activeSitesList.add(SitesE.POKERSTRATEGY);
+        if(activeSites.contains(SitesE.HIGHSTAKESDB.getValue())){
+            activeSitesList.add(SitesE.HIGHSTAKESDB);
         }
-        if(activeSites.contains(SitesE.POKERFIRMA.getValue())){
-            activeSitesList.add(SitesE.POKERFIRMA);
-        }
-        if(activeSites.contains(SitesE.POKEROLYMP.getValue())){
-            activeSitesList.add(SitesE.POKEROLYMP);
-        }
+
         if(activeSites.contains(SitesE.POKERNEWS.getValue())){
             activeSitesList.add(SitesE.POKERNEWS);
         }
 
+        if(activeSites.contains(SitesE.POKERFIRMA.getValue())){
+            activeSitesList.add(SitesE.POKERFIRMA);
+        }
+
+        if(activeSites.contains(SitesE.POKEROLYMP.getValue())){
+            activeSitesList.add(SitesE.POKEROLYMP);
+        }
+
+        if(activeSites.contains(SitesE.HOCHGEPOKERT.getValue())){
+            activeSitesList.add(SitesE.HOCHGEPOKERT);
+        }
+
+        if(activeSites.contains(SitesE.POKERSTRATEGY.getValue())){
+            activeSitesList.add(SitesE.POKERSTRATEGY);
+        }
 
         return activeSitesList;
 

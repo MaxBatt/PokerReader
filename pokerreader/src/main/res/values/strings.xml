@@ -12,6 +12,8 @@
     <string name="sites_pokerfirma">Pokerfirma.com</string>
     <string name="sites_pokerolymp">Pokerolymp.com</string>
     <string name="sites_pokernews">Pokernews.com</string>
+    <string name="sites_highstakesdb">Highstakesdb.com</string>
+    <string name="sites_hochgepokert">Hochgepokert.com</string>
 
     <!-- Menus -->
     <string name="article_menu_share">Share</string>
@@ -59,6 +61,8 @@
     <string name="pref_key_site_pokerfirma" translatable="false">pokerfirma.com</string>
     <string name="pref_key_site_pokerolymp" translatable="false">pokerolymp.com</string>
     <string name="pref_key_site_pokernews" translatable="false">pokernews.com</string>
+    <string name="pref_key_site_highstakesdb" translatable="false">highstakesdb.com</string>
+    <string name="pref_key_site_hochgepokert" translatable="false">hochgepokert.com</string>
 
     <string name="pref_key_app_cleared" translatable="false">appCleared</string>
     <string name="pref_article_age" translatable="false">article_age</string>

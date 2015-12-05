@@ -12,6 +12,8 @@
     <string name="sites_pokerfirma">Pokerfirma.com</string>
     <string name="sites_pokerolymp">Pokerolymp.com</string>
     <string name="sites_pokernews">Pokernews.com</string>
+    <string name="sites_highstakesdb">highstakesdb.com</string>
+    <string name="sites_hochgepokert">hochgepokert.com</string>
 
     <!-- Menus -->
     <string name="article_menu_share">Teilen</string>

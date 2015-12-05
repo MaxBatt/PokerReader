@@ -9,7 +9,7 @@
             android:summary="@string/article_age_summary"
             android:entries="@array/article_age_keys"
             android:entryValues="@array/article_age_values"
-            android:defaultValue="3"
+            android:defaultValue="1"
             />
 
         <MultiSelectListPreference

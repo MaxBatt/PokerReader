@@ -1,6 +1,7 @@
 package beatmax.pokerreader.models;
 
 public enum SitesE {
+	HIGHSTAKESDB("highstakesdb.com"),
 	POKERSTRATEGY("pokerstrategy.com"),
 	POKERFIRMA("pokerfirma.com"),
 	HOCHGEPOKERT("hochgepokert.com"),
