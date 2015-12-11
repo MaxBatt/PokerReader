@@ -114,7 +114,6 @@ public class PrefManager {
     }
 
     /**
-     * sets if articleList should be reloaded
      * @param shouldReload
      */
     public void setShouldReload(boolean shouldReload) {
