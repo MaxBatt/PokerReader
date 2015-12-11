@@ -30,7 +30,10 @@ import retrofit.RestAdapter;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action1;
+import rx.functions.Actions;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
+import rx.subjects.PublishSubject;
 
 /**
  * Created by Beatmax on 08.08.15.
@@ -51,6 +54,9 @@ public class ArticleSyncronizer {
     private RequestParams mRequestParams;
 
     private ArticleList mArticleList;
+
+    private PublishSubject<Object> mCompleteSubject = PublishSubject.create();
+
 
 
 
@@ -84,6 +90,13 @@ public class ArticleSyncronizer {
 
     }
 
+    /**
+     *
+     * @return emits an object every time the sync completes
+     */
+    public Observable<Object> getSyncCompleted() {
+        return mCompleteSubject;
+    }
 
     /**
      * Downloads multiple articles with given request params.
@@ -101,19 +114,7 @@ public class ArticleSyncronizer {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(Schedulers.newThread())
 
-                .subscribe(new Subscriber<ArrayList<Integer>>() {
-                    @Override
-                    public void onCompleted() {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.d(TAG, e);
-                    }
-
-                    @Override
-                    public void onNext(ArrayList<Integer> articleIds) {
+                .subscribe(articleIds -> {
 
                         Log.d(TAG, "ArticleIds: " + articleIds.toString());
 
@@ -121,8 +122,13 @@ public class ArticleSyncronizer {
                         mRequestParams.setIds(articleIds);
 
                         Realm realm = Realm.getInstance(mContext);
+
+//                        try (Realm realm1 = Realm.getDefaultInstance())
+//                        {
+//
+//                        }
                         // check which articles are already persisted in realm and only fetch unpersisted articles from webservice
-                        for(int articleId : articleIds){
+                        for (int articleId : articleIds) {
                             RealmQuery<RealmArticle> query = realm.where(RealmArticle.class);
 
                             query.equalTo("id", articleId);
@@ -131,109 +137,57 @@ public class ArticleSyncronizer {
                             android.util.Log.d(TAG, "Persisted Articles:");
                             android.util.Log.d(TAG, res.toString());
 
-                            if(res.size() == 0){
+                            if (res.size() == 0) {
                                 mRequestParams.addArticleToFetch(articleId);
                             }
 
                         }
-
                         realm.close();
 
 
-                        if(mRequestParams.getArticlesToFetch().size() == 0){
+                        if (mRequestParams.getArticlesToFetch().size() == 0) {
                             Log.d(TAG, "No articles to fetch. Everything is persisted");
-                            for (SyncListener listener: mListener) {
-                                listener.onFinished();
-                            }
+//                            for (SyncListener listener : mListener) {
+//                                listener.onFinished();
+//                            }
+                            mCompleteSubject.onNext(new Object());
                             return;
                         }
 
                         Log.d(TAG, "Fetching IDs: " + mRequestParams.getIdsParam());
                         Log.d(TAG, "From Sites: " + mRequestParams.getSitesParam());
-                        Log.d(TAG, "Fetching " + articleIds.size() +  " articles...");
+                        Log.d(TAG, "Fetching " + articleIds.size() + " articles...");
 
 
                         // Rest api call to Get the list of all articles.
                         // This happens in an own thread
-                        mApi.getArticles(mRequestParams.getSitesParam(), mRequestParams.getArticlesToFetchParam())
-                                .subscribeOn(Schedulers.newThread())
-                                .observeOn(Schedulers.newThread())
-                                .subscribe(new Subscriber<ArticleList>() {
-                                    @Override
-                                    public void onCompleted() {
+                        mApi.getArticles(mRequestParams.getSitesParam(), mRequestParams.getArticlesToFetchParam()).
+                                doOnNext(articleList1 -> mArticleList = articleList1)
+                                .map(articleList -> Observable.from(articleList.get())).flatMap(articleObservable ->
 
-                                    }
+                                                                    articleObservable.doOnNext(article1 -> {
+                                                                        Log.d(TAG, "Downloading image: " + article1.getThumbUrl());
 
-                                    @Override
-                                    public void onError(Throwable e) {
-                                        Log.e(TAG, e);
-                                    }
+                                                                        // Download image from given url and save it locally on the device
+                                                                        File imgFile = downloadImage(article1.getThumbUrl());
 
-                                    @Override
-                                    public void onNext(ArticleList articleList) {
+                                                                        // if the image is available save local image path to the realm article model
+                                                                        if (imgFile != null) {
+                                                                            Log.d(TAG, "Saved image to " + imgFile.getAbsolutePath());
 
-                                        Log.d(TAG, "Done!");
-                                        mArticleList = articleList;
+                                                                        } else {
+                                                                            Log.d(TAG, "No image file  available");
+                                                                        }
+                                                                    })
+                                                                    .subscribeOn(Schedulers.io())
+                                            )
+                                            .doOnError(t -> Log.d(TAG, t))
+                                            .subscribe(Actions.empty(), Actions.empty(), () -> {
+                                                Log.d(TAG, "FINISHED SYNCHRONIZING");
 
-                                        // Downloading images for all articles
-                                        // We transform the articleList into an observable
-                                        Observable
-                                                .from(articleList.get())
-                                                        // Now we transform every article into an observable,
-                                                        // so that we can download the image for every article in an own thread
-                                                        // All observabes will be flatmapped, so that we can be noticed if all images are downloaded
-                                                .flatMap(article ->
-                                                                Observable
-                                                                        .just(article)
-                                                                        .doOnNext(new Action1<Article>() {
-                                                                            @Override
-                                                                            public void call(Article article) {
-                                                                                Log.d(TAG, "Downloading image: " + article.getThumbUrl());
-
-                                                                                // Download image from given url and save it locally on the device
-                                                                                File imgFile = downloadImage(article.getThumbUrl());
-
-                                                                                // if the image is available save local image path to the realm article model
-                                                                                if (imgFile != null) {
-                                                                                    Log.d(TAG, "Saved image to " + imgFile.getAbsolutePath());
-
-                                                                                } else {
-                                                                                    Log.d(TAG, "No image file  available");
-                                                                                }
-                                                                            }
-
-                                                                        })
-                                                                        .subscribeOn(Schedulers.io())
-                                                )
-                                                .doOnError(t -> Log.d(TAG, t))
-                                                .subscribe(new Subscriber<Article>() {
-
-                                                    // All articles including images are downloaded and the merged observable fires
-                                                    @Override
-                                                    public void onCompleted() {
-                                                        Log.d(TAG, "FINISHED SYNCHRONIZING");
-
-                                                        persistArticles();
-                                                        for (SyncListener listener: mListener) {
-                                                            listener.onFinished();
-                                                        }
-
-                                                    }
-
-                                                    @Override
-                                                    public void onError(Throwable e) {
-                                                        Log.e(TAG, e);
-                                                    }
-
-                                                    @Override
-                                                    public void onNext(Article article) {
-
-                                                    }
-                                                });
-                                    }
-                                });
-
-                    }
+                                                persistArticles();
+                                                mCompleteSubject.onNext(new Object());
+                                            });
                 });
 
     }

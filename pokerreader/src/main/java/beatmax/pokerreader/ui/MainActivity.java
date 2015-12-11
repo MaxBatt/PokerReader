@@ -33,6 +33,7 @@ import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
+import rx.android.schedulers.AndroidSchedulers;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -144,54 +145,44 @@ public class MainActivity extends AppCompatActivity {
             synchronizeArticles();
 
 
-            mSyncronizer.addListener(new ArticleSyncronizer.SyncListener() {
-                @Override
-                public void onFinished() {
-                   runOnUiThread(new Runnable() {
-                       @Override
-                       public void run() {
-
-                           clearOldArticles();
-                           mPrefManager.setShouldReload(false);
+            mSyncronizer.getSyncCompleted().observeOn(AndroidSchedulers.mainThread()).subscribe(o -> {
+                clearOldArticles();
+                mPrefManager.setShouldReload(false);
 
 
-                           mDialog.dismiss();
+                mDialog.dismiss();
 
 
-                           // Get the ViewPager and set it's PagerAdapter so that it can display items
-                           mViewpager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), MainActivity.this));
+                // Get the ViewPager and set it's PagerAdapter so that it can display items
+                mViewpager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), MainActivity.this));
 
-                           // Give the PagerSlidingTabStrip the ViewPager
-                           // Attach the view pager to the tab strip
-                           mTabStrip.setViewPager(mViewpager);
+                // Give the PagerSlidingTabStrip the ViewPager
+                // Attach the view pager to the tab strip
+                mTabStrip.setViewPager(mViewpager);
 
 
-                           // Attach the page change listener to tab strip and **not** the view pager inside the activity
-                           mTabStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                // Attach the page change listener to tab strip and **not** the view pager inside the activity
+                mTabStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
-                               // This method will be invoked when a new page becomes selected.
-                               @Override
-                               public void onPageSelected(int position) {
+                    // This method will be invoked when a new page becomes selected.
+                    @Override
+                    public void onPageSelected(int position) {
 
-                               }
+                    }
 
-                               // This method will be invoked when the current page is scrolled
-                               @Override
-                               public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                                   // Code goes here
-                               }
+                    // This method will be invoked when the current page is scrolled
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                        // Code goes here
+                    }
 
-                               // Called when the scroll state changes:
-                               // SCROLL_STATE_IDLE, SCROLL_STATE_DRAGGING, SCROLL_STATE_SETTLING
-                               @Override
-                               public void onPageScrollStateChanged(int state) {
-                                   // Code goes here
-                               }
-                           });
-
-                       }
-                   });
-                }
+                    // Called when the scroll state changes:
+                    // SCROLL_STATE_IDLE, SCROLL_STATE_DRAGGING, SCROLL_STATE_SETTLING
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+                        // Code goes here
+                    }
+                });
             });
 
         }
